@@ -48,3 +48,5 @@ forge/mcp/src/minecraft/*.java
 forge/mcp/src/minecraft/net/minecraft/*
 forge/mcp/src/minecraft/net/minecraftforge/*
 
+# Windows Files #
+Thumbs.db
