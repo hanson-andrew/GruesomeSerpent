@@ -5,11 +5,13 @@ import net.gruesomeserpent.MagicMissileScroll;
 import net.gruesomeserpent.RenderMagicMissileBolt;
 import net.gruesomeserpent.Wand;
 import net.minecraft.block.Block;
+import net.minecraft.client.Minecraft;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.FurnaceRecipes;
 import net.minecraft.util.ResourceLocation;
+import net.minecraftforge.common.MinecraftForge;
 import cpw.mods.fml.client.registry.RenderingRegistry;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler; // used in 1.6.2
@@ -52,7 +54,8 @@ public class GrueseomSerpent {
     Wand.registerItem();
     MagicMissileScroll.registerItem();
     EntityRegistry.registerModEntity(MagicMissileEntity.class, "MagicMissile", 5002, this, 120, 3, true);
-    RenderingRegistry.registerEntityRenderingHandler(MagicMissileEntity.class, new RenderMagicMissileBolt());    
+    RenderingRegistry.registerEntityRenderingHandler(MagicMissileEntity.class, new RenderMagicMissileBolt());
+    MinecraftForge.EVENT_BUS.register(new AbilityTray(Minecraft.getMinecraft()));
   }
 
   @EventHandler
